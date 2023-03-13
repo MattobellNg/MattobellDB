@@ -1,0 +1,634 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan" style="color:CRIMSON;"><b>Sale of Real Estate Property Management</b></h2>
+            <h2 class="oe_slogan" style="color:olive;"><b>Real Estate Management of Sales Property with User/Partner/Agent/Broker Sales Commissions Management</b></h2>
+       <p  style="color:green;font-size: 20px;" class="oe_mt32"> <b>
+This app provides features to allow your customers or visitors to request a sales quote from your website shops/eCommerce for the property you are selling and also allows you to manage sales commission by Sales Order / Customer Invoice / Customer Payment based options to Internal Users and External Partners / Agents / Brokers.
+       </b> </p>
+
+
+<p  style="color:CRIMSON;font-size: 20px;">Main Features:</p>
+<p>
+    <ul style="color:olive;font-size: 20px;">
+        <li>This app allows you to publish your properties on a website shop (by creating product in the backend as property) and allow your customer/visitor on the website to get quotes for that property.</li>
+        <li>This app supports installment to be shown on the website using product attributes which you have to configure in the backend on the product form.</li>
+        <li>Your customer/visitor can view your property location on the google maps on the website shop page and also they can download documents you have uploaded on product forms like Specifications, Payment plans, Plans of building, design, and model documents. By clicking on a get quote they can fill in details and request for quotes from your company.</li>
+        <li>This app allows you to create installments based on the number of installments configured on the product form. This will add a button on the Sales order form to create installments in a single click.
+        </li>
+        <li>
+            Sale of Real Estate Property Management has the feature of Sales Commission so to get more details about sales commission you check the below link.<br/>
+            Get more detail on sale commission then click <a href="https://www.odoo.com/apps/modules/15.0/sales_commission_external_user" target="_blank">https://www.odoo.com/apps/modules/15.0/sales_commission_external_user</a><br/>
+        </li>
+        <li>For more details see the video and below screenshots.</li>
+    </ul>
+</p>
+
+<!--<h3   style="color:CRIMSON;"> Sales Commission for Users/Agent/Brokers</h3>-->
+<!--<p  style="color:olive;"> This module will allow your company to setup internal users and external partners job positions who is going to receive commission on Customer form and allow to setup percentages on Product.-->
+<!--<p  style="color:olive;">-->
+<!--This module provide feature to manage sales commision with different options. You can configure after installing module on your database what option/policy your company is following to give sales commissions to your sales persons and other expternal partners related to that sales. For example you can set up commission to Sales man, Sales manager, Sales agent, Branch manager, External Agents etc..<br/>-->
+<!--<br/>-->
+<!--Module will allow you to select and configure <b>When to Pay</b> and <b>Calculation based on </b>. Here you can define policy which will be used to give commission to your sales team and other external partners related to that sales.<br/>-->
+<!--<br/> -->
+<!--For every <b>Calcalulation based on</b> we are allowing you to set:-->
+<!--Percentage based on users job position.<br/>-->
+<!--System will work only with SINGLE option at time ie for example you can set <b>When to Pay</b> = Invoice confirm and <b>calculation based on</b> = Product so system will set workflow based on that and create sales commissions.-->
+
+<!--</p>-->
+<!--<p   style="color:olive;">For down payment % and fixed amount, you have to configure percentage on <b>down payment</b> product and this way module will allow down payments invoices to process with sales commission.</p>-->
+<!--<p   style="color:olive;"> Main advantage of using this app is that allow you to edit percentage at time of processing sales. For example initial you can setup your percentage of sales team/ product / category but when you create Sales order/ Invoice you can modify that percentage. This modification allow for percentage with Sales team policy as well as on product and product category where you can open/edit Sales order line / Invoice line and edit percentage.-->
+
+<!--<h3   style="color:CRIMSON;"> Workflow will be : </h3>-->
+
+<!--<b>Option1 :</b> Sales Confirmation -> Create Sales commission worksheet (if not created for current month) -> Add Sales commission lines on worksheet -> For every sales of current month, system will append sales commission lines on worksheet. -> End of month Accountant can review worksheet and create commision invoice to pay/release commision to sales persons and external partners/agents.<br/>-->
+<!--<p  style="color:olive;"><b> Invoice Validate -> </b>Create Sales commission worksheet (if not created for current month) -> Add Sales commission lines on worksheet -> For every invoice validation of current month, system will append sales commission lines on worksheet. -> End of month Accountant can review worksheet and create commision invoice to pay/release commision to sales person and external partners/agents.<br/></p>-->
+<!--<b>Option3 : </b>Customer Payment -> Create Sales commission worksheet (if not created for current month) -> Add Sales commission lines on worksheet -> For every payment from customer of current month, system will append sales commission lines on worksheet. -> End of month Accountant can review worksheet and create commision invoice to pay/release commision to sales person and external partners/agents.<br/>-->
+
+<!--<p  style="color:olive;"><b>-->
+<!--Commission to sales users, other users and external partners/agents always will be in company currency. Multi currency is supported for this module so sales order/ invoice / payment can be in different currency but system will take care for it and create commission lines in company currency. So you do not have to worry about it.</b><br/>-->
+<!--<br/>Sales Commission product is created using data and you still can change commission product on commission worksheet to create commission invoice.<br/>-->
+<!--Commission amount will be based on Net Revenue Model where it consider amounts without taxes. (This app does not support Gross Margin Model).-->
+<!--</p>-->
+<h3 style="color:CRIMSON;font-size: 20px;">
+    Menus Available:
+</h3>
+<ul style="color:olive;font-size: 20px;">
+    <li><h4><b>Sales</b></h4>
+        <ul>
+            <!-- <li>Sales
+                <ul>
+                    
+                    </ul>
+                </li> -->
+                <li><h4><b>Configuration</b></h4>
+                    <ul>
+                        <li><h4><b>Property</b></h4></li>
+                        <ul>
+                            <li><h4><b>Property Types</b></h4></li>
+                        </ul>
+                        <li><h4><b>Sales Commission Level</b></h4></li>
+                    </ul>
+                </li>
+                <li><h4><b>Commissions</b></h4>
+                    <ul>
+                        <li><h4><b>Commission Worksheets</b></h4></li>
+                        <li><h4><b>Sales Commissions Lines</b></h4></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><h4><b>Invoicing</b></h4>
+            <ul>
+                <li><h4><b>Commissions</b></h4></li>
+                <ul>
+                    <li><h4><b>Commission Worksheets</b></h4></li>
+                    <li><h4><b>Sales Commissions Lines</b></h4></li>
+                </ul>
+            </ul>
+        </li>
+        
+    </ul>
+
+
+<!--<h3  style="color:olive;"><b>New Menus</h3></b><br/><i  style="color:olive;">-->
+<!------ Sales/Property/Property Types<br/>-->
+<!------ Sales/Configuration/Sales Commission Level<br/>-->
+<!------ Invoicing/Commissions<br/>-->
+<!------ ---- Invoicing/Commissions/Commission Worksheets<br/>-->
+<!------ ---- Invoicing/Commissions/Sales Commissions Lines<br/>-->
+<!------ Sales/Commissions<br/>-->
+<!------ ---- Sales/Commissions/Commission Worksheets<br/>-->
+<!------ ---- Sales/Commissions/Sales Commissions Lines<br/></i>-->
+<!--</p>-->
+
+<section class="oe_container">
+   <div class="row">
+          <div class="col-12">
+              <center>
+                  <p style="font-size:25px; border-width:0px; border-style:solid;background-color: #4BB0A2;width:450px;color:white; " class="px-sm-4 p-2 pt-4">
+                        <b>Edition Compatibility:</b>
+                  </p><br/>
+                  <span class="btn btn-primary fa fa-check-circle" style="width:240px; font-weight:bold; font-size:21px; padding-top:12px; padding-bottom:12px; padding-left:40px; padding-right:40px; border-radius:28px; color:white; border:none;background-color: purple;">    Enterprise</span>
+                  <span class="btn btn-primary fa fa-check-circle" style="width:320px; font-weight:bold; font-size:21px; padding-top:12px; padding-bottom:12px; padding-left:40px; padding-right:40px; border-radius:28px; color:white; border:none;background-color: purple;">    Odoo.sh</span>
+                  <span class="btn btn-primary fa fa-check-circle" style="width:270px; font-weight:bold; font-size:21px; padding-top:12px; padding-bottom:12px; padding-left:40px; padding-right:40px; border-radius:28px; color:white; border:none;background-color: purple;">    Community</span>
+              </center>
+              <br/>
+       </div>
+   </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan" style="color:CRIMSON;"><b>Create Product Attribute [Odoo Standard] for Installments Plans</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="1rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Configure Product Attribute Values [Odoo Standard]</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="2rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Configure Product Property Types</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="3rp.png">
+                </div>
+            </p>
+    </div>
+<!--    <div class="oe_row">-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="m7.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Products Kanban View [Odoo Standard]</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="4rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Configure Variants on Product Form [Odoo Standard]</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="5rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Configure Product Property Details on Product Form</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="6rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Set a Number of Installment on Product Variant Form</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="7rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Select Documents on Product View [Odoo Standard]</b></h2>
+<p style="color:Tomato; font-size:15px;"><b>This document will be visible on the  product page and allow your customer/visitor to download.
+            </b><p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="8rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:CRIMSON;" >Website Admin Settings for (Property Location on Google Map) on Website</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="google_map.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Website Shop Page Odoo Standard</b></h2>
+<p style="color:Tomato; font-size:15px;"> <b>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="9rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">View Location Button in Google Map on Shop</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="10rp.png">
+                </div>
+            </p>
+    </div>
+     <div class="oe_row">
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="11rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Product Page on Shop with Get Quote Button</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="12rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Quote Request Screen by Clicking Get Quote</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="13rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Submittion Massage to Customer
+</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="14rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Backend Sale Quotation Created Automatically [Odoo Standard Sales Order]</b>
+        </h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="15rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Create Installment Invoice using Button on Sales Order</b></h2>
+<p style="color:Tomato;font-size:15px;"> <b>This will create a number of invoices based on the number of installments.</b></p>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="16rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Invoice Smart Button on Quote/Order</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="17rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Installment Customer Invoices</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="18rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Installment Customer Invoice Form View</b></h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="19rp.png">
+                </div>
+            </p>
+    </div>
+</section>
+
+    </div>
+</section>
+<!-- <section class="oe_container">
+    <div class="oe_row">
+<h2 class="oe_slogan" style="color:CRIMSON;" > <b>Sales Commission to User/Partner/Agent/Brokers in Detail</b></h1>
+        <h3 class="oe_slogan"><b style="color:RoyalBlue;" >Sale of Real Estate Property Management having feature of Sales Commission so to get more details about commission you check below link</b></h3>
+            <p>
+               <h2><b><a href="https://www.odoo.com/apps/modules/15.0/sales_commission_external_user" target="new">https://www.odoo.com/apps/modules/15.0/sales_commission_external_user</a></b></h2>
+            </p>
+    </div>
+</section> -->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+<h2 class="oe_slogan" style="color:CRIMSON;" > <b>Sales Commission to User/Partner/Agent/Brokers in Detail</b></h1>
+        <h3 class="oe_slogan"><b style="color:RoyalBlue;" >Initial Settings for Sales Commissions Process</h3>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m22.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;" >Sales Commission Levels</h2>
+        <p style="color:Tomato; font-size:15px;"> <b>You can setup and create all commission levels which are going to receive commission on your company Sales activities.</b></p>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m27.png">
+                </div>
+            </p>
+    </div>
+    <div class="oe_row">
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m28.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;" >Customer Form - Set Commission Leves</h2>
+    <p  style="color:Tomato; font-size:15px;"> <b>So you have to setup <b>Sales Commission Level</b> on that Commission Level for every customers and this will be used while creating commission record. For example when you do validate invoice for Nicole Ford then selected levels of user will be receving commissions based on % configured on Sales team/ Product / Product Category.</b></p>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m29.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:RoyalBlue;" >Calcalulation based on = Product Category</h2>-->
+<!--<p style="color:Teal;">If you have select <b>Calcalulation based on</b> product category then you have to specify percentages by each levels and that will be used to give commission to users and external partners.</p>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="product_categoris.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;" >Calcalulation based on = Product</h2>
+<p style="color:Tomato; font-size:15px;"> <b>If you have select <b>Calcalulation based on</b> product then you have to specify percentages by each levels and that will be used to give commission to users and external partners.</b></p>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m49.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:RoyalBlue;" >Calcalulation based on = Sales Team</h2>-->
+<!--<p style="color:Teal;">If you have select <b>Calcalulation based on</b> sales team then you have to specify percentages by each levels and that will be used to give commission to users and external partners.</p>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="sales_team.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:Violet;">When to Pay = Sales Confirmation</h2>-->
+<!--<p style="color:Teal;"><b>When to Pay</b> = Sales Confirmation then order confirmation of your sales order will create sales commission for selected users and external partners.-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="sal_order_comm.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--            <h2 class="oe_slogan"><b style="color:Violet;">Sales Commissions Users Setting (For When to Pay = Sales Confirmation)</h2>-->
+<!--<p style="color:Teal;"> When you select customer on Quote/Order then Levels configured on that customer will automatically pop up on this screen so you only have to enter internal user or external partners value in this tab.-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="sale_user_setting.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--            <h2 class="oe_slogan"><b style="color:Violet;">Sales Commissions Level % Setting (For When to Pay = Sales Confirmation AND Calcalulation based on = Sales Team)</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="sale_level_setting.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:Violet;">Sales Commission Lines with Sales Confirmation Option</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="sal_order_comm_validate.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b style="color:Violet;">When to Pay = Sales Confirmation with Calc Based on = Product</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="62.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">When to Pay = Invoice Validate</h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m51.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+            <h2 class="oe_slogan"><b style="color:CRIMSON;">Sales Commissions user Setting (For When to Pay = Invoice Validate)</h2>
+<p style="color:Tomato; font-size:15px;"> <b> When to Pay = Invoice Validate then validation of invoice will create sales commission for selected users and external partners.</b> 
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m52.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--            <h2 class="oe_slogan"><b style="color:green;">Sales Commissions Level Setting(For When to Pay = Invoice Validate AND Calcalulation based on = Sales Team)</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="invoice_level_setting.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">Sales Commission Lines with Invoice Validate Option</h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m53.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b  style="color:yellow;">When to Pay = Customer Payment</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="payment_confirm1.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<section class="oe_container">-->
+<!--    <div class="oe_row">-->
+<!--        <h2 class="oe_slogan"><b  style="color:yellow;">Sales Commission Lines with Customer Payment Option</h2>-->
+<!--            <p>-->
+<!--                <div class="oe_demo oe_screenshot">-->
+<!--                    <img src="Sales Commission_payment_1.png">-->
+<!--                </div>-->
+<!--            </p>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- <section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b  style="color:CRIMSON;">Sales Commission Worksheet</h2>
+    <p style="color:Tomato; font-size:15px;"><b>System will create sales commission worksheet for every sales users/ External partners and levels for every month automatically and insert all sales commision lines shown above inside that and using this Sales Commission Worksheet account team can pay sales commission.</b></p>
+<p style="color:Tomato; font-size:15px;"><b>Using create invoice button account department can release payment and create commision invoice.</b></p>
+
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m54.png">
+                </div>
+            </p>
+    </div>
+    
+    <div class="oe_row">
+
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m55.png">
+                </div>
+            </p>
+    </div>
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">PDF Report for Sales Commission Worksheet by Sales Person/Manager and External Partners</h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m56.png">
+                </div>
+            </p>
+    </div>
+</section>
+<section class="oe_container">
+    <div class="oe_row">
+        <h2 class="oe_slogan"><b style="color:CRIMSON;">PDF Report for Sales Commission Worksheet by Sales Person/Manager and External Partners</h2>
+            <p>
+                <div class="oe_demo oe_screenshot">
+                    <img src="m57.png">
+                </div>
+            </p>
+    </div>
+</section> -->
+
+<section class="oe_container" >
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">
+            <strong><font style="color:#2dd280;" class="text-epsilon">Contact / Support<br/></font></strong>
+            <strong><font style="color:crimson" class="text-epsilon">Introducing</font>
+            <font style="color:crimson;" class="text-epsilon">Probuse Consulting Services Pvt. Ltd.</font></strong>
+          </h2>
+       <div class="oe_span6">
+           <div class="mt32 col-md-10">
+           <div class="oe_picture" style="margin: 25px 10%;">
+               <a  target='new' href="http://www.probuse.com/">
+                   <img src="logo.png">
+               </a>
+           </div>
+           <p class="oe_mt32">
+               <font style="color:crimson;">If you need any help or want more additional features, you may contact us through:</font><br/>
+               <font style="color:crimson;">Email: <a href="contact@probuse.com">contact@probuse.com</a> <br/>
+               <font style="color:crimson;">Website: </font><a href="http://www.probuse.com/" target='new'><u>www.probuse.com</u></a> <br/>
+               <font style="color:crimson;">Skype: mustufa_probuse</font><br/>
+           </p>
+           <p>
+                <h2>
+                    <a href="https://www.facebook.com/probusecs" target="new">
+                      <i class="fa fa-facebook-square" style="font-size:38px;"></i>
+                    </a>
+                    <a href="https://twitter.com/mustufa_odoo" target="new">
+                      <i class="fa fa-twitter" style="font-size:38px;"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/mustufa-rangwala-odoo-openerp-0a46777/" target="new">
+                      <i class="fa fa-linkedin" style="font-size:38px;"></i>
+                    </a>
+                    <!--<a href="https://www.youtube.com/channel/UCHlyoC4khP44M1cOCJXo2FQ" target="new">
+                      <i class="fa fa-youtube-play" style="font-size:38px;"></i>
+                    </a>-->
+                    <a href="https://plus.google.com/u/0/113284573788891837715/posts" target="new" rel="publisher">
+                      <i class="fa fa-google-plus-square" style="font-size:38px;"></i>
+                    </a>
+              </h2>
+            </p>
+           </div>
+       </div>
+    <div class="mt32 oe_span6">
+           <p style="text-align: justify; ">
+            <font class="text-epsilon" style="color:crimson;">Probuse Consulting Service Pvt Ltd is an Software and Web development specialist which offers complete business application together. We are well experienced to provide a face for your business on the software and Internet level.</font>
+          </p>
+          <p style="text-align: justify;">
+            <font class="text-epsilon" style="color:crimson">Probuse Consulting Service Pvt Ltd is a specialist in Odoo/OpenERP services and could give your business open source hand to drive.</font>
+          </p>
+            <h3 class="o_animate o_anim_bounce_in" style="text-align: left; animation-play-state: paused;">
+                <font style="font-size: 18px;color:#ff8000;" class="text-epsilon"><strong>Our Services</strong></font>
+            </h3>
+            <ul style="list-style-type:square">
+                <a href="http://www.probuse.com/page/odoo-implementation" target="new"><li list-style-type: "*";><p style="text-align: left; color:crimson;">Odoo Implementation</p></a></li>
+                <a href="http://www.probuse.com/page/odoo-support" target="new"><li><p style="text-align: left; color:crimson;">Odoo Support</p></a></li>
+                <a href="http://www.probuse.com/page/odoo-customization" target="new"><li><p style="text-align: left; color:crimson;">Odoo Customization</p></li></a>
+                <a href="http://www.probuse.com/page/odoo-migration" target="new"><li><p style="text-align: left; color:crimson;">Odoo Migration</p></a></li>
+                <a href="http://www.probuse.com/page/odoo-training" target="new"><li><p style="text-align: left; color:crimson;">Odoo Training</p></a></li>
+            </ul>
+           </p>
+       </div>
+   </div>
+</section>
