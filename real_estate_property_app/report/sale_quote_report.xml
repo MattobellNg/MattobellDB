@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+<data>
+
+<template id="products_ribbon_visible_card" inherit_id="sale.report_saleorder_document">
+    <!-- <xpath expr="///t/div/t[2]/table/thead/tr/th[5]" position="after"> -->
+        <!-- <xpath expr="//span[@t-field='line.name']" position="after"> -->
+        <xpath expr="//table[hasclass('o_main_table')]//thead//tr//th[1]" position="after"> <!-- migration_13 -->
+        <th class="text-right">Number of Installment</th>
+        <th class="text-right">Installment Amount</th>
+    </xpath>
+    <xpath expr="//span[@t-field='line.name']" position="after">
+        <td class="text-right">
+            <!-- <span t-field="l.number_of_installment"/> -->
+            <span t-field="line.number_of_installment"/> <!-- migration_13 -->
+        </td>
+        <td class="text-right">
+            <!-- <span t-field="l.installment_amount"/> -->
+            <span t-field="line.installment_amount"/> <!-- migration_13 -->
+        </td>
+    </xpath>
+</template>
+
+</data>
+</odoo>

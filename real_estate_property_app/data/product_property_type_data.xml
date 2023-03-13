@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="vacant_land_property_type" model="property.type">
+            <field name="name">Vacant Land</field>
+            <field name="code">123</field>
+        </record>
+        <record id="residential_properties_property_type" model="property.type">
+            <field name="name">Residential Properties </field>
+            <field name="code">456</field>
+        </record>
+        <record id="commercial_property_type" model="property.type">
+            <field name="name">Commercial Properties</field>
+            <field name="code">789</field>
+        </record>
+
+    </data>
+</odoo>

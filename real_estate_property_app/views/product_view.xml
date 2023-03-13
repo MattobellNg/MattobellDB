@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- website_product_shop_attachment -->
+        <!-- ************************************************************* -->
+        <record id="view_product_website_product_attachments" model="ir.ui.view">
+            <field name="name">product.template.form.website.product.attachments</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <!-- <field name="website_style_ids" position="after"> -->
+                    <group name="shop" position="after"> <!-- odoo13 -->
+                        <!-- <group string="Website Product Attachments" groups="sales_team.group_sale_salesman"> -->
+                        <div class="o_horizontal_separator mt-4 mb-3 text-uppercase fw-bolder small" groups="sales_team.group_sale_salesman">Website Product Attachments</div>
+                            <field name="website_product_attachment" nolabel='1' groups="sales_team.group_sale_salesman"/>
+                        <!-- </group> -->
+                    </group>
+                    <!-- </field> -->
+                </data>
+            </field>
+        </record>
+        <!-- ************************************************************* -->
+
+        <record id="product_template_form_view_inherit_property_product" model="ir.ui.view">
+            <field name="name">product.template.common.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+<!--                 <xpath expr="//form/sheet/div[2]/div[@name='options']" position="inside">-->
+                <xpath expr="//div[@name='options']" position="inside">
+                     <span class="d-inline-block">
+                        <field name="is_property_product"/>
+                        <label for="is_property_product"/>
+                    </span>
+<!--                     </div>-->
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="product_template_property_form_view">
+            <field name="name">product.temlate.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Property Details" attrs="{'invisible': [('is_property_product', '!=', True)]}">
+                        <group>
+                            <group>
+                                <field name="partner_id" 
+                                    context="{'search_default_customer':1, 'show_address': 1}"
+                                    options="{&quot;always_reload&quot;: True}"/>
+                                <field name="property_type_id" widget="selection"/>
+<!--                                <field name="is_property_product"/>-->
+                                <!-- <field name="is_property_product" invisible="1"/> -->
+
+                                <!-- migration13 -->
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="product_property_form_view">
+            <field name="name">product.product.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Property Details" attrs="{'invisible': [('is_property_product', '!=', True)]}">
+                        <group>
+                            <group>
+                                <field name="number_of_installment"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

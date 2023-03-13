@@ -1,0 +1,216 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="website_product_quotations" name="Options" inherit_id='website_sale.product'>
+<!--            <xpath expr="//section[@id='product_detail']/div/div/form/div/a[@id='add_to_cart']" position="after">-->
+            <!-- <xpath expr="//a[@id='add_to_cart']" position="after"> -->
+             <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+                <br/>
+                <a id="get_Quote" class="btn btn-primary btn-lg mt8" 
+                                    data-bs-placement="top"
+                                    data-html="true"
+                                    t-attf-id="product_comment-#{product_id}"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#getquote"
+                                    > <i class="fa fa-dollar"></i> Get Quote</a>
+            </xpath>
+             <xpath expr="//t[@t-call='website.layout']" position="after"> 
+                 <div class="modal fade" id="getquote" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <form id="product_squote" action="/shop_quote/product_quote" method="POST" class="modal-content">
+                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&amp;times;</button>
+                          <div align="center"> 
+                              <strong><h3 class="modal-title" aling="center">Quote Request</h3></strong>
+                          </div>
+                          <b><span><t t-esc="product.name"/></span></b>
+                        </div>
+                        <div class="modal-body"> 
+                            <p>
+                                <span t-esc="product_id"/>
+                                Please provide details below questions.That we will send you questions by email.
+                            </p>
+                            <hr />
+
+                            <div id="name" class="form-group">
+                                <label class="control-label" for="name">Your Name:</label>
+                                <!-- <t t-if="user"> -->
+                                <input type="text" name="name" required="required" id="name" class="form-control" t-attf-value="#{request.env.user and request.env.user.name if not request.env.user._is_public() else ''}" t-att-readonly="'1' if not request.env.user._is_public() else None" />
+
+                             <!--    <t t-if="not request.env.user._is_public()">
+                                    <input type="text" name="name" id="name" readonly="readonly"  required="required" class="form-control"  t-attf-value="#{request.env.user and request.env.user.name or ''}" />
+                                </t> -->
+                                <!-- <t t-if="not user"> -->
+                                <!-- <t t-if="request.env.user._is_public()">
+                                    <input type="text" name="name" id="name" required="required" class="form-control"  t-attf-value="#{user and user.name or ''}" />
+                                </t> -->
+                                <!-- <t t-if="request.env.user._is_public()">
+                                    <input type="text" name="name" id="name" required="required" class="form-control"  t-att-value="''" />
+                                </t> -->
+                            </div>
+                            <div id="email" class="form-group">
+                                <label class="control-label" for="email">Your Email:</label>
+                                <!-- <t t-if="user"> -->
+                                <input type="text" name="email" required="required" id="email" class="form-control" t-attf-value="#{request.env.user.email if not request.env.user._is_public() else ''}" t-att-readonly="'1' if not request.env.user._is_public() else None" />
+                               <!--  <t t-if="not request.env.user._is_public()">
+                                    <input type="text" name="email" readonly="readonly"  required="required" id="email" class="form-control" t-att-value="request.env.user.email" />
+                                </t> -->
+                                <!-- <t t-if="not user"> -->
+                                <!-- <t t-if="request.env.user._is_public()">
+                                    <input type="text" name="email" required="required" id="email" class="form-control" t-att-value="''" />
+                                </t> -->
+                            </div>
+                            <div id="phone" class="form-group">
+                                <label class="control-label" for="phone">Your Phone:</label>
+
+                                 <input type="text" name="phone" required="required" id="phone" class="form-control" t-attf-value="#{request.env.user.partner_id.phone if not request.env.user._is_public() else ''}" t-att-readonly="'1' if not request.env.user._is_public() else None"/>
+                                <!-- <t t-if="user"> -->
+                                <!-- <t t-if="not request.env.user._is_public()">
+                                    <input type="text" name="phone" id="phone" readonly="readonly"  required="required" class="form-control" t-att-value="request.env.user.partner_id.phone" />
+                                </t> -->
+                                <!-- <t t-if="not user"> -->
+                                <!-- <t t-if="request.env.user._is_public()">
+                                    <input type="text" name="phone" id="phone" required="required" class="form-control" t-att-value="''" />
+                                </t> -->
+                            </div>
+                            <div t-if="product.sudo().partner_id" id="property_location" class="form-group">
+                                <label class="control-label" for="property_location">Property Location:</label>
+                                <input type="text" name="property_location" id="property_location" readonly="readonly"  required="required" class="form-control" t-att-value="product.sudo().partner_id.name" />
+                            </div>
+                            <div t-if="product.sudo().property_type_id" id="property_type" class="form-group">
+                                <label class="control-label" for="property_type">Property Type:</label>
+                                <input type="text" name="property_type" id="property_type" readonly="readonly"  required="required" class="form-control" t-att-value="product.sudo().property_type_id.name" />
+                            </div>
+                            <div id="note" class="form-group">
+                                <label class="control-label" for="quantity">Your Comment:</label>
+                                <input type="text" name="note" id="note" class="form-control" />
+                            </div>
+                            <input type="hidden" name="product_template" id="product_template"
+                                    t-att-value="product.id" class="form-control"/>
+                            <div class="js_product">
+                              <t t-placeholder="select">
+                                <ul class="list-unstyled">
+                                    <t t-set="inc" t-value="0"/>
+                                    <p t-att-class="'hidden' if len(product.product_variant_ids) == 1 else ''"><strong>Select Installment</strong></p>                             
+                                    <t t-foreach="product.product_variant_ids" t-as="variant_id"> 
+                                        <input t-att-class="'hidden' if len(product.product_variant_ids) == 1 else ''" type="radio" class="" t-att-checked="'checked' if not inc else ''" name="product_id" t-att-value="variant_id.id" />
+                                        <!-- <t t-foreach="variant_id.attribute_value_ids" t-as="value_id"> -->
+                                        <t t-foreach="variant_id.product_template_attribute_value_ids" t-as="value_id"> <!-- odoo13 -->
+                                          <span t-field="value_id.name"/>
+                                        </t><br/>
+                                        <t t-set="inc" t-value="inc+1"/>
+                                    </t>
+                                </ul>
+                              </t>
+                            </div>
+                            <div id="quantity" class="form-group">
+                                <label class="control-label" for="quantity">Quantity:</label>
+                                <input type="number" min="1" step="1" name="quantity" id="quantity" class="form-control" required="required"/>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Send</button> or
+                            <button type="button" class="btn btn-link" data-bs-dismiss="modal" style="padding: 0">Cancel</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+             </xpath>
+        </template>
+        
+        <template id="quote_thanks" name="Success">
+          <!-- <t t-call="website.layout">
+              <div id="wrap">
+                  <div class="oe_structure oe_empty">
+                      <div class="container text-success oe_subdescription"> 
+                          <hr />
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="alert alert-success">
+                                   <i class="fa fa-thumbs-o-up fa-2x"></i> Thank you for sending inquiring. Our sales team will get back to you as soon as possible.
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </t> -->
+            <t t-call="website.layout">
+                  <div id="wrap">
+                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_1"/>
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-lg-7 col-xl-6 mr-lg-auto oe_structure">
+                                <section class="pt40 s_text_block pb40 o_colored_level o_cc o_cc1" data-snippet="s_text_block" data-name="Text">
+                                    <div class="container">
+                                        <span class="d-block fa fa-4x fa-thumbs-up mx-auto rounded-circle bg-primary"/><br/>
+                                        <h1 class="text-center">Thank You!</h1>
+                                        <div class="pb16 pt16 s_hr" data-snippet="s_hr" data-name="Separator">
+                                            <hr class="mx-auto border-top w-50 border-dark text-center"/>
+                                        </div>
+                                            <h5>Dear <span t-esc="request.env.user.name"/>,</h5>
+                                                <br/>
+                                            <h5>We have received you  inquiry and our sales team will get back to you as soon as possible.
+                                            <br/><br/>
+                                            Thank You,<br/>
+                                            Sales Team.
+                                            </h5>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="oe_structure" id="oe_structure_website_form_contact_us_thanks_2"/>
+                  </div>
+                </t>
+        </template>
+        
+        <template id="property_google_map" inherit_id="website_sale.product_quantity" customize_show="True" name="Show Attachments">
+            <xpath expr="//div/p[@t-field='product.description_sale']" position="before">
+                <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+                    <!-- TODO widget contact must add itemprop attributes -->
+                    <div t-field="product.partner_id" t-options='{
+                            "widget": "contact",
+                            "fields": ["name", "address", "phone", "mobile", "fax", "email"]}'/>
+                    <t t-if="not product.google_map_img()">
+                    <h4><br/>
+                        <span class="fa-fw mt16"/> <a t-att-href="product.google_map_link()" target="_BLANK"><img src="/real_estate_property_app/static/description/map.png" width="50" height="50" /> <font color="#1EA362">Location in Google Map</font></a></h4>
+                    </t>
+                </address>
+                <br/>
+                <t t-if="product.google_map_img()">
+                    <a t-att-href="product.google_map_link()" target="_BLANK">
+                       <img class="thumbnail img-responsive" t-att-src="product.google_map_img()" />
+                    </a>
+                </t>
+            </xpath>
+        </template>
+        
+        
+        <!-- website_product_shop_attachment -->
+        <!-- ************************************************************* -->
+        <template id="product_product_attachment" inherit_id="website_sale.product_quantity" customize_show="True" name="Show Attachments">
+            <xpath expr="//div/p[@t-field='product.description_sale']" position="after">
+                <t t-if="len(product.product_variant_ids)">
+                    <h3>Product Documents</h3>
+<!--                    <t t-foreach="product.product_variant_ids[0].website_product_attachment" t-as="attachment">-->
+                    <t t-foreach="product.website_product_attachment.sudo()" t-as="attachment">
+                    <div>
+                        
+                        <!-- <a t-attf-href="/web/real_estat_attach/#{attachment.id}?download=true&amp;product_tmp_id=#{product.id}" target="_blank"> -->
+                        <a t-attf-href="/web/content/#{attachment.id}?download=true" target="_blank">
+<!--                        <a t-att-href="'/web/content/'+str(attachment.id)+'?download=true'">-->
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <t t-esc="attachment.name"/>
+                        </a>
+                    </div>
+                    <newline/>
+                    </t>
+                </t>
+            </xpath>
+        </template>
+        <!-- ************************************************************* -->
+        
+    </data>
+</odoo>
