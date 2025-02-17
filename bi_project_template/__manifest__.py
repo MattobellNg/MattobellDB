@@ -2,13 +2,13 @@
 # Part of BrowseInfo. See LICENSE file for full copyright and licensing details.
 {
     'name': 'Project Template',
-    'version': '16.0.0.1',
+    'version': '18.0.0.0',
     'category': "Project",
     'license':'OPL-1',
     'summary': 'This apps helps to make project as template and make new project from the Template',
     'description': """Project Template , Make project as template and make new project from the Template, """,
-    'author': 'BrowseInfo',
-    'website': 'https://www.browseinfo.in',
+    'author': 'BROWSEINFO',
+    'website': 'https://www.browseinfo.com/demo-request?app=bi_project_template&version=18&edition=Community',
     'depends': ['base','project'],
     'data': [
                'security/ir.model.access.csv',
@@ -21,7 +21,7 @@
     'installable':True,
     'auto_install':False,
     'application':True,
-    'live_test_url':'https://youtu.be/Es9jFjAptAQ',
+    'live_test_url':'https://www.browseinfo.com/demo-request?app=bi_project_template&version=18&edition=Community',
     "images":['static/description/Banner.gif'],
 }
 

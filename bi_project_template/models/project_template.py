@@ -5,12 +5,10 @@ from odoo import models, fields, api , _
 from odoo.exceptions import UserError
 
 class project_project(models.Model):
-
     _inherit = "project.project"
 
     @api.model
-    def default_get(self, flds):
-
+    def default_get(self, fields):
         stage_type_obj = self.env['template.task']
         state_new_id = stage_type_obj.search([('name', '=', 'New')], limit=1)
         if state_new_id:
@@ -38,11 +36,11 @@ class project_project(models.Model):
         else:
             closed_id = stage_type_obj.create({'name':'Closed', 'sequence':4, 'task_check':True})
         stage_list = []
-        result = super(project_project, self).default_get(flds)
+        result = super(project_project, self).default_get(fields)
         for i in state_new_id:
-            result['template_task_id'] = i.id
+            if 'template_task_id' in fields:
+                result['template_task_id'] = i.id
         return result
-
 
     def count_sequence(self):
         for a in self:
@@ -94,8 +92,7 @@ class project_project(models.Model):
         if self.env.user.has_group('project.group_project_stages'):
             if self.env.context.get('default_is_project_template', True) and not self.env.context.get('project_template'):
                 project.update({'template_task_id':state_new_id, 'sequence_state':1,'is_project_template':True})
-        return project 
-
+        return project
 
     def reset_project(self):
         for i in self:

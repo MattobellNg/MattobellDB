@@ -8,15 +8,13 @@
             <field name="arch" type="xml">
                 <form string="Template Task">
                     <sheet>
-                    <group>
-
-                    <field name="task_check" />
-                    <field name="name"/>
-                    <field name="sequence" />
-                    <field name="description"/>
-
-                    </group>
-                </sheet>
+                        <group>
+                            <field name="task_check" />
+                            <field name="name"/>
+                            <field name="sequence" />
+                            <field name="description"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -26,21 +24,19 @@
             <field name="model">template.task</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <tree string="Template Task">
-                    
+                <list string="Template Task">
                     <field name="task_check" />
                     <field name="name" />
                     <field name="sequence" />
                     <field name="description"/>
-                
-                </tree>
+                </list>
             </field>
         </record>
 
         <record model="ir.actions.act_window" id="action_template_task_tree">
             <field name="name">Template Task</field>
             <field name="res_model">template.task</field>
-            <field name="view_mode">form,tree</field>
+            <field name="view_mode">form,list</field>
             <field name="view_id" ref="template_task_tree" />
         </record>
 
@@ -48,7 +44,7 @@
                     id="template_task_menu"
                     parent="project.menu_project_config" 
                     action="action_template_task_tree"
-                    sequence="9"/>
+                    sequence="15"/>
 
     </data>
 </odoo>
