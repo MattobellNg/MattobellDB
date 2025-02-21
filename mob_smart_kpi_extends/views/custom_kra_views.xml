@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_create_kra_form_inherit" model="ir.ui.view">
+            <field name="name">employee.kra.form.inherit</field>
+            <field name="model">employee.kra</field>
+            <field name="inherit_id" ref="ng_smart_kpi.view_create_kra_form"/>
+            <field name="arch" type="xml">
+                <!-- Add invisible computed fields -->
+                <xpath expr="//field[@name='hr_status']" position="after">
+                    <field name="manager_comment_readonly" invisible="1"/>
+                    <field name="employee_comment_readonly" invisible="1"/>
+                </xpath>
+
+                <!-- Replace the comments section in the sheet -->
+                <xpath expr="//sheet//label[@for='manager_comment']" position="replace">
+                    <label for="manager_comment"/>
+                </xpath>
+                <xpath expr="//sheet//field[@name='manager_comment']" position="replace">
+                    <field name="manager_comment" readonly="manager_comment_readonly"/>
+                </xpath>
+                <xpath expr="//sheet//label[@for='employee_comment']" position="replace">
+                    <label for="employee_comment"/>
+                </xpath>
+                <xpath expr="//sheet//field[@name='employee_comment']" position="replace">
+                    <field name="employee_comment" readonly="employee_comment_readonly"/>
+                </xpath>
+
+                <!-- Replace the comments section in the footer -->
+                <xpath expr="//footer//label[@for='manager_comment']" position="replace">
+                    <label for="manager_comment"/>
+                </xpath>
+                <xpath expr="//footer//field[@name='manager_comment']" position="replace">
+                    <field name="manager_comment" readonly="manager_comment_readonly"/>
+                </xpath>
+                <xpath expr="//footer//label[@for='employee_comment']" position="replace">
+                    <label for="employee_comment"/>
+                </xpath>
+                <xpath expr="//footer//field[@name='employee_comment']" position="replace">
+                    <field name="employee_comment" readonly="employee_comment_readonly"/>
+                </xpath>
+
+                 <xpath expr="//button[@name='action_draft']" position="attributes">
+                      <attribute name="invisible">state not in ('cancel',)</attribute>
+                 </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
